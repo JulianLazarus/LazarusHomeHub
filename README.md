@@ -2,7 +2,7 @@
 IoT smart security network, with AI assistance
 
 
-A collection of open souce LAZARUS network resources
+A collection of open souce LAZARUS network resources for
 http://lazarus.co.nz
 
 Sample Javascript code for Lazarus hub
