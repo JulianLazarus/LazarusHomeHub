@@ -39,9 +39,10 @@ lazarusCloud.SendPush("HOME_ALARM", payload);
 
 
 
+
 /*
 To send an SMS from your phone, via a push to it,
-Slightly more complicated, but also pretty easy with Lazarus network
+Pretty easy...
 */
-var payload = '{"id":15,"name":"my stress alarm", "location":"bath tub"}';
+var payload = '{"address":"555-5555", "message":"The roof is on fire"}';
 lazarusCloud.SendPush("SMS", payload);
