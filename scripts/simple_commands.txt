@@ -13,8 +13,6 @@ logInfo(testval);
 
 /* execute a command on a device
 Uses OpenZWave commands
-https://python-openzwave.googlecode.com/hg-history/c2d93bd3574e73b828dd86da40d80bbed8c25749/docs/_build/html/command.html
-
 eg
 	"Set Switch", "True"
 	"Set Switch", "False"
