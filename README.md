@@ -1,5 +1,6 @@
 # Lazarus Home Hub
-Home Device Hub
+IoT smart security network, with AI assistance
+
 
 A collection of open souce LAZARUS network resources
 http://lazarus.co.nz
