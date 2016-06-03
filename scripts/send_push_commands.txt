@@ -1,0 +1,47 @@
+/*
+We have exposed your primary mobile device pipeline from Lazarus hub,
+
+Valid commands
+
+COMMAND_SMS = "SMS";
+COMMAND_LOCATE = "LOCATE";
+COMMAND_BACKUP = "BACKUP";
+COMMAND_LOCK = "LOCK";
+COMMAND_SCREAM = "SCREAM";
+COMMAND_MESSAGE = "ALERT";
+
+*/
+var lazarusCloud = getPlugin("Cloud Sync Plug-in");
+
+
+/*
+To send your phone a scream/ring command
+*/
+lazarusCloud.SendPush("SCREAM", "");
+
+
+/*
+To remotely lock your primary mobile device
+*/
+lazarusCloud.SendPush("LOCK", "");
+
+
+/*
+To send an a user defined alarm (which may get read out on mobile device)
+
+requires a payload consisting of
+int id;
+String name;
+String location;
+*/
+var payload = '{"id":15,"name":"my stress alarm", "location":"bath tub"}';
+lazarusCloud.SendPush("HOME_ALARM", payload);
+
+
+
+/*
+To send an SMS from your phone, via a push to it,
+Slightly more complicated, but also pretty easy with Lazarus network
+*/
+var payload = '{"id":15,"name":"my stress alarm", "location":"bath tub"}';
+lazarusCloud.SendPush("SMS", payload);
