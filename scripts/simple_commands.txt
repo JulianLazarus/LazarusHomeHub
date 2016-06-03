@@ -1,0 +1,69 @@
+/* who is this pc, ie we can call .net assemblies
+*/
+logInfo(System.Environment.UserName);
+
+
+/* get the value of a device
+Value is returned as a sting
+eg	"False"
+*/
+var testval = getDeviceNameValue("Master Bedroom Wall Plug 1", "Switch");
+logInfo(testval);
+
+
+/* execute a command on a device
+Uses OpenZWave commands
+https://python-openzwave.googlecode.com/hg-history/c2d93bd3574e73b828dd86da40d80bbed8c25749/docs/_build/html/command.html
+
+eg
+	"Set Switch", "True"
+	"Set Switch", "False"
+*/
+runDeviceNameCommandName("Master Bedroom Wall Plug 1", "Set Switch", "True");
+
+
+/*	execute a scene
+*/
+runScene("Kids off to School");
+
+
+/* repoll devices
+*/
+repollAll();
+
+
+/* repoll a device
+*/
+repollDeviceName("Master Bedroom Wall Plug 1");
+
+
+/* switch a group on/off
+*/
+switchGroup("Wall Plugs", true);
+
+
+/* access plugins
+*/
+var noaa = getPlugin("NOAA Plug-in");
+logInfo(noaa.Name);
+logInfo(noaa.Description);
+logInfo(String(noaa.IsDark()));
+logInfo(String(noaa.Longitude));
+logInfo(String(noaa.Latitude));
+
+if(noaa.IsDark())
+{
+    switchGroup("Office Lights", true);
+}
+
+
+/*
+Add a delay and an action (run code, delayed)
+*/
+setTimeout("runDeviceNameCommandName('Master Bedroom Wall Plug 1', 'Set Switch', 'True');", 3000);
+
+/*
+Execute Shell Script or .exe (command, parameter)
+*/
+shell("http://google.com", "");
+
